@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fruits records retrive from mysql !</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+
+        <h1>Fruits Records ..</h1>
+        <hr>
+        {% if data %}
+        <table>
+            <tr>
+                <td>Fruits-Id</td>
+                <td>Fruits-Name</td>
+                <td>Fruits-price</td>
+                <td>Fruits-seller</td>
+                <td>Fruits-category</td>
+            </tr>
+        {% for i in data %}
+         <tr>
+            <td>{{i.fno}}</td>
+            <td>{{i.fname}}</td>
+            <td>{{i.fprice}}</td>
+            <td>{{i.fseller}}</td>
+            <td>{{i.fcate}}</td>
+         </tr>    
+        {% endfor %}
+        </table>
+        {% else %}
+        <p>no records found!1</p>
+         {% endif %}  
+
+        
+      
+        <script src="" async defer></script>
+    </body>
+</html>
